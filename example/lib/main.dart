@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
             elevation: 2.0,
             items: [
               // Suggested count : 4
-              SCBottomBarItem(icon: Icons.verified_user, title: "User", onPressed: () {}),
+              SCBottomBarItem(child: Icon(Icons.verified_user), title: "User", onPressed: () {}),
               SCBottomBarItem(icon: Icons.supervised_user_circle, title: "Details", onPressed: () {}),
               SCBottomBarItem(icon: Icons.notifications, title: "Notifications", onPressed: () {}),
               SCBottomBarItem(icon: Icons.details, title: "New Data", onPressed: () {}),

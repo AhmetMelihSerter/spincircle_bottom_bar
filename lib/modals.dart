@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SCBottomBarDetails {
   Color? backgroundColor;
   double? elevation;
@@ -25,42 +24,46 @@ class SCBottomBarDetails {
     this.titleStyle,
     this.circleColors,
     this.backgroundColor,
-    this.elevation
+    this.elevation,
   });
 }
 
-class SCActionButtonDetails{
+class SCActionButtonDetails {
   Color color;
-  Icon icon;
+  Widget icon;
+  Widget? closedIcon;
   double elevation;
 
   SCActionButtonDetails({
     required this.color,
     required this.icon,
-    required this.elevation
+    this.closedIcon,
+    required this.elevation,
   });
 }
 
 class SCItem {
-  Icon icon;
+  Widget icon;
   void Function() onPressed;
 
   SCItem({
     required this.icon,
-    required this.onPressed
+    required this.onPressed,
   });
 }
 
 class SCBottomBarItem {
+  Widget? child;
   IconData? activeIcon;
-  IconData icon;
+  IconData? icon;
   String? title;
   Function onPressed;
 
   SCBottomBarItem({
+    this.child,
     this.activeIcon,
-    required this.icon,
+    this.icon,
     this.title,
-    required this.onPressed
-  });
+    required this.onPressed,
+  }) : assert(child != null || icon != null);
 }
